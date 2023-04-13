@@ -64,6 +64,7 @@ public class Vehiculo implements Comparable<Vehiculo> {
     
     
     //*****   ESTOS DOS MÉTODOS LOS NECESITO PARA PODER USAR EL CONTAINS EN ARRAYLIST *****
+    //****    SE EXPLICARÁ MÁS ADELANTE
     @Override
     public boolean equals (Object obj) {
        
