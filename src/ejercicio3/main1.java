@@ -7,6 +7,7 @@ package ejercicio3;
 
 import java.util.Collections;
 import java.util.HashMap;
+import java.util.Iterator;
 import java.util.Map;
 import java.util.Scanner;
 
@@ -40,13 +41,23 @@ public class main1 {
            System.out.println("\n\n\n\n** EJERCICIO 3 - AGENDA **");
            System.out.println("*********************************");
            
-           //Listamos la agenda
-           for(Map.Entry<String, String> elemento: agenda.entrySet()){
-                        nombre=elemento.getKey();
-                        telefono=elemento.getValue();
-                        
-                        System.out.printf("%20s --> %s\n",nombre,telefono);
+           //Listamos la agenda con foreach
+//           for(Map.Entry<String, String> elemento: agenda.entrySet()){
+//                        nombre=elemento.getKey();
+//                        telefono=elemento.getValue();
+//                        
+//                        System.out.printf("%20s --> %s\n",nombre,telefono);
+//           }
+           
+           //Listamos con iterador
+           Iterator<String> it=agenda.keySet().iterator();
+           while(it.hasNext()){
+               String keyNombre = it.next();
+               String valueTelefono = agenda.get(keyNombre);
+               System.out.printf("%20s --> %s\n",keyNombre,valueTelefono);
+               
            }
+           
            System.out.println("*********************************");
 
            System.out.println("1. Añadir contacto");
