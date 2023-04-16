@@ -43,16 +43,12 @@ public class Producto {
     }
     
     
-    
-    
-    
-    public void imprimir(){
-        //System.out.printf("----------------------------");
-        System.out.printf("%-10s   %10.2f€   %d unidades\n",descripcion,precio,unidades);
-       // System.out.printf("----------------------------\n");
+    @Override
+    public String toString(){
+        return String.format("%-10s   %10.2f€   %d unidades\n",descripcion,precio,unidades);
+        
     }
     
- 
     
     
 }

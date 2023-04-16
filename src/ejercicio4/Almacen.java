@@ -6,7 +6,7 @@
 package ejercicio4;
 
 import java.util.HashMap;
-import java.util.Map;
+import java.util.Iterator;
 
 /**
  *
@@ -67,20 +67,22 @@ public class Almacen {
     
     public void listarAlmacen(){
         System.out.println("LISTA DEL ALMACEN");
-        System.out.println("***************************");
+        System.out.println("******************************************");
         Integer codigo;
         Producto p;
         
-        
-        for(Map.Entry<Integer, Producto> elemento: mapaProductos.entrySet()){
-                        codigo=elemento.getKey();
-                        p=elemento.getValue();
-                        System.out.println("---------------------------------");
-                        System.out.println("Codigo:"+codigo);
-                        p.imprimir();
+        //Listamos con iterador
+        Iterator<Integer> it=mapaProductos.keySet().iterator();
+        while(it.hasNext()){
+            Integer keyCodigo = it.next();
+            p = mapaProductos.get(keyCodigo);
+            System.out.println(p);
+            
+
         }
+
         
-        System.out.println("***************************");
+        System.out.println("******************************************");
         
         
     }
