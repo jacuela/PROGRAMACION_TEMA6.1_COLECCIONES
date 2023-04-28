@@ -31,6 +31,11 @@ public class Persona implements Comparable<Persona> {
         return edad;
     }
 
+    public String getNombre() {
+        return nombre;
+    }
+
+    
     
     @Override
     public String toString(){
@@ -50,29 +55,48 @@ public class Persona implements Comparable<Persona> {
     @Override
     public int compareTo(Persona o) {
       
-      //Ordenaremos las personas segun su DNI
+      //Ordenamos por DNI  
       if (this.dni.compareTo(o.getDni())<0)
             return -1;
       else if (this.dni.compareTo(o.getDni())>0)
             return 1;
-      else
-            return 0;
-    
-        //En realidad, el método compareTo de String ya me devuelve exactamente
+      else {
+          return 0;
+      }
+             
+       //En realidad, el método compareTo de String ya me devuelve exactamente
         //lo que necesito, por lo que lo podría programar como
         //        return this.dni.compareTo(o.dni);
+          
         
-        
-
+      
 //        //Ordenamos las personas segun EDAD
 //        if (this.edad < o.getEdad())
 //            return -1;
 //        else if (this.edad > o.getEdad())
 //            return 1;
 //        else
-//            return 0;
+//            return 0; 
+        
+//      //Ordenaremos las personas segun su DNI y EDAD
+//      if (this.dni.compareTo(o.getDni())<0)
+//            return -1;
+//      else if (this.dni.compareTo(o.getDni())>0)
+//            return 1;
+//      else {
+//           
+//          if (this.edad<o.getEdad()){
+//              return -1;
+//          }
+//          else if (this.edad>o.getEdad()){
+//              return 1;
+//          }
+//          else{
+//              return 0;
+//          }
+//      }      
     
-    }
+    }  
 
    
     

@@ -36,7 +36,9 @@ public class main {
         //meto algunos datos de prueba
         listaPersonas.add(new Persona("5555A","Mortadelo",19));
         listaPersonas.add(new Persona("4444A","Filemon",18));
-        
+        listaPersonas.add(new Persona("5555A","Alicia",14));
+        listaPersonas.add(new Persona("4444A","Alvaro",12));
+
         
       
         //Para poder usar este método, antes tiene la clase Persona que implementar
