@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package ejemplos;
+package ejemplo;
 
 import java.util.ArrayList;
 import java.util.Collections;
@@ -13,7 +13,7 @@ import java.util.Iterator;
  *
  * @author jacuela
  */
-public class arraylistEjemplo {
+public class arraylistCadenaEjemplo {
 
     /**
      * @param args the command line arguments
@@ -58,6 +58,7 @@ public class arraylistEjemplo {
             //it.remove();     //puedo elimiar elemento mientras recorro
         }
         
+        
         //Devolvemos el último elemento de la lista
         System.out.println("");
         System.out.println("Ultimo elemento:"+lista.get(lista.size()-1));
@@ -65,7 +66,7 @@ public class arraylistEjemplo {
         //Añade el nombre "XXX" en la posición 2
         lista.add(2, "XXX");
         imprimir(lista);
-        
+       
         //Sustituye el elemento de la posición 2 por "Jero"
         lista.set(2, "Jero");
         imprimir(lista);
@@ -96,10 +97,8 @@ public class arraylistEjemplo {
         //Crear un alias 
         ArrayList<String> listaAlias=lista;
         
-        
         //Creamos una copia o clon
         ArrayList<String> listaCopia=new ArrayList(lista); 
-        
         
         //Borrar el ultimo  usando el alias
         listaAlias.remove(listaAlias.size()-1);
@@ -111,11 +110,7 @@ public class arraylistEjemplo {
         //Borrar la lista "listaCopia"
         listaCopia.clear();
         System.out.print("\nListaCopia:");imprimir(listaCopia);
-        
-        
-        
     }
-    
     
     private static void imprimir(ArrayList<String> l){
         //Imprimimos lista con un forearch
