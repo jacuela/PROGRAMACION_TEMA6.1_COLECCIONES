@@ -79,17 +79,29 @@ public class main {
                     System.out.print("Edad: ");
                     edad=Integer.parseInt(scn.nextLine());
                     
-                    //Compruebo si existe
-                    boolean existe = false;
-                    for (Persona p : listaPersonas) {
-                       if (p.getDni().equalsIgnoreCase(dni)){
-                           existe = true;
-                           System.out.println("ERROR: ya existe dicho DNI");
-                       }
+                    //Compruebo si existe recorriedo el array
+//                    boolean existe = false;
+//                    for (Persona p : listaPersonas) {
+//                       if (p.getDni().equalsIgnoreCase(dni)){
+//                           existe = true;
+//                           System.out.println("ERROR: ya existe dicho DNI");
+//                       }
+//                    }
+//                    
+//                    if (!existe){
+//                        listaPersonas.add(new Persona(dni,nombre,edad));
+//                    }
+                    
+                    //Compruebo si existe con el contains
+                    Persona p = new Persona(dni,nombre,edad);
+                    if (listaPersonas.contains(p)){ //necesito programar el equals
+                        System.out.println("ERROR: ya existe dicho DNI");
+                    }else{
+                        listaPersonas.add(p);
                     }
-                    if (!existe){
-                        listaPersonas.add(new Persona(dni,nombre,edad));
-                    }
+                    
+                    
+                    
                     break;
                
                case 2:

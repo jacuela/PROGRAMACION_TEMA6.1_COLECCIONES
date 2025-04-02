@@ -54,7 +54,7 @@ public class Persona implements Comparable<Persona> {
     
     
     @Override
-    public int compareTo(Persona p) {
+    public int compareTo(Persona o) {
         //Ordenamos por EDAD
 //        if (this.edad < p.getEdad())
 //            return -1;
@@ -65,84 +65,61 @@ public class Persona implements Comparable<Persona> {
 //        
         
         //Ordenamos por DNI
-        if (this.dni.compareTo(p.getDni())<0){
-             return -1;
-        }    
-        else if (this.dni.compareTo(p.getDni())>0){
-             return 1;
-        }    
+//        if (this.dni.compareTo(p.getDni())<0){
+//             return -1;
+//        }    
+//        else if (this.dni.compareTo(p.getDni())>0){
+//             return 1;
+//        }    
+//        else {
+//            return 0;
+//        }
+
+
+        //Ordenaremos las personas segun su DNI y EDAD
+        if (this.dni.compareTo(o.getDni())<0)
+              return -1;
+        else if (this.dni.compareTo(o.getDni())>0)
+              return 1;
         else {
-            return 0;
-        }
-    
+
+            if (this.edad<o.getEdad()){
+                return -1;
+            }
+            else if (this.edad>o.getEdad()){
+                return 1;
+            }
+            else{
+                return 0;
+            }
+        }      
+
     }
+
+     //Método por si queremos usar el contains() de ArrayList
+    @Override
+    public boolean equals (Object obj) {
+       if (obj !=null && obj instanceof Persona){
+            //Voy a comparar por DNI
+            //object sera una Persona que contiene el DNI 
+            Persona p=(Persona)obj;
+            if(this.dni.equals(p.dni)){
+                return true;
+            }
+       } 
+       return false;
+    }
+
+    @Override
+    public int hashCode() {
+        int hash = 3;
+        hash = 37 * hash + Objects.hashCode(this.dni);
+        return hash;
+    }
+
+
     
 } //fin class 
     
     
     
-//    @Override
-//    public int compareTo(Persona o) {
-//      
-//      //Ordenamos por DNI  
-//      if (this.dni.compareTo(o.getDni())<0)
-//            return -1;
-//      else if (this.dni.compareTo(o.getDni())>0)
-//            return 1;
-//      else {
-//          return 0;
-//      }
-             
-       //En realidad, el método compareTo de String ya me devuelve exactamente
-        //lo que necesito, por lo que lo podría programar como
-        //        return this.dni.compareTo(o.dni);
-          
-        
-      
-//        //Ordenamos las personas segun EDAD
-//        if (this.edad < o.getEdad())
-//            return -1;
-//        else if (this.edad > o.getEdad())
-//            return 1;
-//        else
-//            return 0; 
-        
-//      //Ordenaremos las personas segun su DNI y EDAD
-//      if (this.dni.compareTo(o.getDni())<0)
-//            return -1;
-//      else if (this.dni.compareTo(o.getDni())>0)
-//            return 1;
-//      else {
-//           
-//          if (this.edad<o.getEdad()){
-//              return -1;
-//          }
-//          else if (this.edad>o.getEdad()){
-//              return 1;
-//          }
-//          else{
-//              return 0;
-//          }
-//      }      
-
-    
-
-   
-    
-      //Método por si queremos usar el contains() de ArrayList
-//    @Override
-//    public boolean equals (Object obj) {
-//       if (obj !=null && obj instanceof Persona){
-//            //Voy a comparar por DNI
-//            //object sera una Persona que contiene el DNI 
-//            Persona p=(Persona)obj;
-//            if(this.dni.equals(p.dni)){
-//                return true;
-//            }
-//       } 
-//       return false;
-//    }
-
-    
-    
-}
