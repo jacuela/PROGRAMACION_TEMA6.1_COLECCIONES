@@ -34,10 +34,9 @@ public class main {
         ArrayList <Persona> listaPersonas=new ArrayList();
         
         //meto algunos datos de prueba
-        listaPersonas.add(new Persona("5555A","Mortadelo",19));
-        listaPersonas.add(new Persona("4444A","Filemon",18));
-        listaPersonas.add(new Persona("5555A","Alicia",14));
-        listaPersonas.add(new Persona("4444A","Alvaro",12));
+        listaPersonas.add(new Persona("5555A","Mortadelo",18));
+        listaPersonas.add(new Persona("4444A","Filemon",17));
+        listaPersonas.add(new Persona("1111A","Abad",30));
 
         
       
@@ -49,8 +48,8 @@ public class main {
         //Menu principal
         while(!salir){
            
-           System.out.println("\n\n** EJERCICIO 1 - ARRAYLIST PERSONAS **");
-           System.out.println("*********************************");
+           System.out.println("\n\n    EJERCICIO 1 - ARRAYLIST PERSONAS ");
+           System.out.println("============================================");
            //Ordeno la lista. Para poder hacer esto, Persona tiene que
            //implementar el método compareTo()
            Collections.sort(listaPersonas);
@@ -61,11 +60,10 @@ public class main {
            for (Persona p : listaPersonas) {
                 System.out.println(p);
            }
-           System.out.println("*********************************");
+           System.out.println("============================================");
            System.out.println("1. Añadir Persona");
            System.out.println("2. Eliminar Persona");
-           System.out.println("3. Imprimir datos persona");
-           System.out.println("4. Salir");
+           System.out.println("3. Salir");
             
            System.out.print("Elige una opcion >");
            opcion = Integer.parseInt(scn.nextLine());
@@ -80,7 +78,18 @@ public class main {
                     nombre=scn.nextLine();
                     System.out.print("Edad: ");
                     edad=Integer.parseInt(scn.nextLine());
-                    listaPersonas.add(new Persona(dni,nombre,edad));
+                    
+                    //Compruebo si existe
+                    boolean existe = false;
+                    for (Persona p : listaPersonas) {
+                       if (p.getDni().equalsIgnoreCase(dni)){
+                           existe = true;
+                           System.out.println("ERROR: ya existe dicho DNI");
+                       }
+                    }
+                    if (!existe){
+                        listaPersonas.add(new Persona(dni,nombre,edad));
+                    }
                     break;
                
                case 2:
@@ -132,14 +141,15 @@ public class main {
     
     
     private static boolean eliminarPersona(String dni,ArrayList<Persona> listaPersonas){
-        boolean eliminado=false;
                     
         for (int i = 0; i < listaPersonas.size(); i++) {
                      
                         if (listaPersonas.get(i).getDni().equals(dni)){
                             listaPersonas.remove(i);
-                            return true;
+                            return true; //cuando elimino, tengo que irme.
+                            
                         }
+                    
         }
         return false;
         

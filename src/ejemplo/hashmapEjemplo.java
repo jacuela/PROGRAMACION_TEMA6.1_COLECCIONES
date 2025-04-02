@@ -38,10 +38,55 @@ public class hashmapEjemplo {
         mapaUsuarios.put("Pedro",0000);
         mapaUsuarios.put("Alicia",1111);
         mapaUsuarios.put("Pedro",2222);
+        mapaUsuarios.put("Lorena",2222);
+        mapaUsuarios.put("Aaaa",2222);
         
-        System.out.print("Pin de Pedro:"+mapaUsuarios.get("pedro"));
+        
+        
+        System.out.print("Pin de Pedro:"+mapaUsuarios.get("Pedro"));
         System.out.println("");
 
+        //Num elementos del mapa
+        System.out.println("Elemtons del mapa Usuarios:"+mapaUsuarios.size());
+        
+        //Devolver el key dado el value. Dado el pin, devolver el usuario
+        System.out.println("NO SE PUEDE HACER");
+        
+        //Devolver la lista de keys
+        System.out.println("Lista de usuarios:"+mapaUsuarios.keySet());
+        
+        //Devolver la lista de values (lista de pines)
+        System.out.println("Lista de pines:"+mapaUsuarios.values());
+        
+        //Recorridos
+        //Con un iterador
+        Iterator it = mapaUsuarios.keySet().iterator();
+        
+        System.out.println("\nImprimo con iterador:");
+        while (it.hasNext()){
+            String key = (String)it.next();
+            System.out.println(key+"--->"+mapaUsuarios.get(key));
+        }
+        
+        //Con un foearch
+        System.out.println("\nImprimo con un foreach:");
+        for (Entry<String, Integer> elemento: mapaUsuarios.entrySet()) {
+            String usuario = elemento.getKey();
+            Integer pin = elemento.getValue();
+            System.out.println(usuario+"--->"+pin);
+        }
+        
+        //Eliminar una key
+        mapaUsuarios.remove("Aaaa");
+        
+        //Comprobamos si hay una key
+        System.out.println("Existe la key Aaaa???"+mapaUsuarios.containsKey("Aaaa"));
+        
+        
+        
+        
+        
+        
         
         
         

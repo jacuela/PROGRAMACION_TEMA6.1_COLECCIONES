@@ -52,17 +52,46 @@ public class Persona implements Comparable<Persona> {
 
     }
     
+    
     @Override
-    public int compareTo(Persona o) {
-      
-      //Ordenamos por DNI  
-      if (this.dni.compareTo(o.getDni())<0)
-            return -1;
-      else if (this.dni.compareTo(o.getDni())>0)
-            return 1;
-      else {
-          return 0;
-      }
+    public int compareTo(Persona p) {
+        //Ordenamos por EDAD
+//        if (this.edad < p.getEdad())
+//            return -1;
+//        else if (this.edad > p.getEdad())
+//            return 1;
+//        else
+//            return 0; 
+//        
+        
+        //Ordenamos por DNI
+        if (this.dni.compareTo(p.getDni())<0){
+             return -1;
+        }    
+        else if (this.dni.compareTo(p.getDni())>0){
+             return 1;
+        }    
+        else {
+            return 0;
+        }
+    
+    }
+    
+} //fin class 
+    
+    
+    
+//    @Override
+//    public int compareTo(Persona o) {
+//      
+//      //Ordenamos por DNI  
+//      if (this.dni.compareTo(o.getDni())<0)
+//            return -1;
+//      else if (this.dni.compareTo(o.getDni())>0)
+//            return 1;
+//      else {
+//          return 0;
+//      }
              
        //En realidad, el método compareTo de String ya me devuelve exactamente
         //lo que necesito, por lo que lo podría programar como
@@ -95,8 +124,8 @@ public class Persona implements Comparable<Persona> {
 //              return 0;
 //          }
 //      }      
+
     
-    }  
 
    
     
