@@ -10,11 +10,13 @@ package ejercicio4;
  * @author jacuela
  */
 public class Producto {
+    private int codigo;
     private String descripcion;
     private double precio;
     private int unidades;
     
-    public Producto (String descripcion, double precio, int uni){
+    public Producto (int cod, String descripcion, double precio, int uni){
+       this.codigo = cod;
        this.descripcion=descripcion;
        this.precio=precio;
        this.unidades=uni;
@@ -45,7 +47,7 @@ public class Producto {
     
     @Override
     public String toString(){
-        return String.format("%-10s   %10.2f€   %d unidades\n",descripcion,precio,unidades);
+        return String.format("[%4d] %-10s %8.2f€  %3d unidades",codigo,descripcion,precio,unidades);
         
     }
     

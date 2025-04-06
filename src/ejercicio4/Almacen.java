@@ -24,10 +24,16 @@ public class Almacen {
     }
   
     
-    public void añadirProducto(Producto p){
-        mapaProductos.put(ultimoCodigo,p);
+    public void añadirProducto(String descripcion, double precio, int uni){
+        mapaProductos.put(ultimoCodigo,new Producto(ultimoCodigo,descripcion, precio, uni));
         ultimoCodigo++;
     }
+    
+    
+//    public void añadirProducto(Producto p){
+//        mapaProductos.put(ultimoCodigo,p);
+//        ultimoCodigo++;
+//    }
   
     public void modificarPrecio(Integer codigo,double precio){
         
@@ -67,7 +73,7 @@ public class Almacen {
     
     public void listarAlmacen(){
         System.out.println("LISTA DEL ALMACEN");
-        System.out.println("******************************************");
+        System.out.println("==========================================");
         Integer codigo;
         Producto p;
         
@@ -81,9 +87,8 @@ public class Almacen {
 
         }
 
-        
-        System.out.println("******************************************");
-        
+        System.out.println("==========================================");
+ 
         
     }
     

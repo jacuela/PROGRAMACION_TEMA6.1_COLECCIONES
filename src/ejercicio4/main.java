@@ -19,11 +19,10 @@ public class main {
         
         Almacen mialmacen=new Almacen();
         
-        mialmacen.añadirProducto(new Producto("iphone11",900,50)); //cod 1001
-        mialmacen.añadirProducto(new Producto("galaxy12",800,30)); //cod 1002
-        mialmacen.añadirProducto(new Producto("ps3",400,100));     //cod 1003
-        
-        mialmacen.añadirProducto(new Producto("Satisfyer",50,300));
+        mialmacen.añadirProducto("iphone11",900,50); //cod 1001
+        mialmacen.añadirProducto("galaxy12",800,30); //cod 1002
+        mialmacen.añadirProducto("ps3",400,100);     //cod 1003
+        mialmacen.añadirProducto("Satisfyer",50,300); //cod 1004
         
         mialmacen.modificarPrecio(1001, 950);
        
